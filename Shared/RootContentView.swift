@@ -38,7 +38,7 @@ struct RootContentView: View {
         .tabItem {
           Label("Social", systemImage: "person.3.fill")
         }
-      FavouritesListView()
+      SettingsView()
         .tabItem {
           Label("Settings", systemImage: "gear")
         }
