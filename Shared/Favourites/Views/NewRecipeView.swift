@@ -62,18 +62,20 @@ struct NewRecipeView: View {
                         .focused($focusedField, equals: .directions)
                 }
                 .toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button{
-                        dismiss()
-                    } label: {
-                        Label("Cancel", systemImage: "xmark")
-                            .labelStyle(.iconOnly)
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button{
+                            dismiss()
+                        } label: {
+                            Label("Cancel", systemImage: "xmark")
+                                .labelStyle(.iconOnly)
+                        }
                     }
-                }
                     ToolbarItem {
                         Button{
                             //                            modelContext.insert(recipe)
                             //                            navigateToRecipe = true
+                            viewModel.saveNewRecipe()
+                            focusedField = nil
                             dismiss()
                         } label: {
                             Label("Done", systemImage: "checkmark")
@@ -96,34 +98,7 @@ struct NewRecipeView: View {
         //                          }
         //                        }
         //
-        //        Button {
-        //          viewModel.saveFavourite()
-        //          focusedField = nil
-        //        } label: {
-        //          Text("Save")
-        //            .frame(maxWidth: .infinity)
-        //        }
-        //        .buttonStyle(.blue)
-        //        .listRowInsets(EdgeInsets())
-        //      }
-        //      .onAppear {
-        //        viewModel.fetchFavourite()
-        //      }
-        //      .onDisappear {
-        //        viewModel.saveFavourite()
-        //      }
-        //      .onSubmit {
-        //        switch focusedField {
-        //        case .movie:
-        //          focusedField = .food
-        //        case .food:
-        //          focusedField = .city
-        //        case .city:
-        //          focusedField = .none
-        //        default:
-        //          print("Default")
-        //        }
-        //      }
+        
         //      .listStyle(.plain)
         //      .toolbar {
         //        Button(action: { presentingProfileScreen.toggle() }) {

@@ -1,8 +1,8 @@
 //
-//  MyRecipe.swift
+//  SettingsView.swift
 //  Flavor Fusion
 //
-//  Created by Amanda Fraga on 4/17/24.
+//  Created by Amanda Fraga on 4/18/24.
 //  Copyright © 2021 Google LLC. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,38 +17,45 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 import SwiftUI
 import Combine
 import FirebaseAnalytics
 import FirebaseAnalyticsSwift
 
-struct MyRecipe: View {
-    @StateObject var viewModel = NewRecipeViewModel()
+
+struct SettingsView: View {
     @ObservedObject private var authenticationViewModel = AuthenticationViewModel()
     @State private var presentingProfileScreen = false
+    @State private var displaySettingScreen = false
     
     var body: some View {
-        NavigationView{
-            ScrollView{
-            }
-            .toolbar {
+        NavigationView {
+            VStack{
                 Button(action: { presentingProfileScreen.toggle() }) {
-                    Image(systemName: "plus")
+                    Text("Profile")
+                        .font(.system(size: 20))
+                }
+                .sheet(isPresented: $presentingProfileScreen) {
+                    NavigationView {
+                        UserProfileView()
+                            .environmentObject(authenticationViewModel)
+                    }
+                }
+                Button(action: { displaySettingScreen.toggle() }){
+                    Text("Display")
+                        .font(.system(size: 20))
+                }
+                .sheet(isPresented: $displaySettingScreen) {
+                    NavigationView{
+                        DisplaySettingView(selectedColor: .constant(Color.blue), fontSelected: .constant("Normal"))
+                    }
                 }
             }
-            .sheet(isPresented: $presentingProfileScreen) {
-                NavigationView {
-                    NewRecipeView()
-                        .environmentObject(authenticationViewModel)
-                }
-            }
-            .navigationTitle("My Recipes")
-            //.analyticsScreen(name: "\(MyFavouritesView.self)")
+            .navigationBarTitle("Settings")
         }
     }
 }
 
 #Preview {
-    MyRecipe()
+    SettingsView()
 }
