@@ -24,15 +24,23 @@ struct RootContentView: View {
     TabView {
       MyFavouritesView()
         .tabItem {
-          Label("My Favourites", systemImage: "star.fill")
+          Label("My Recipes", systemImage: "book.pages.fill")
         }
       FavouritesListView()
         .tabItem {
-          Label("All Favourites", systemImage: "wand.and.stars")
+          Label("Favorites", systemImage: "heart")
         }
       FavouritesListView2()
         .tabItem {
-          Label("All Favourites 2", systemImage: "wand.and.stars")
+          Label("Calender", systemImage: "calendar")
+        }
+      FavouritesListView()
+        .tabItem {
+          Label("Social", systemImage: "person.3.fill")
+        }
+      FavouritesListView()
+        .tabItem {
+          Label("Settings", systemImage: "gear")
         }
     }
   }
