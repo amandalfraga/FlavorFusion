@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		005E2EA12BD60B1800A68B28 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E2EA02BD60B1800A68B28 /* CalendarView.swift */; };
+		005E2EA32BD60C9D00A68B28 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E2EA22BD60C9D00A68B28 /* CalendarView.swift */; };
 		3E14A5D92BCEE6020087B9E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E14A5D82BCEE6020087B9E2 /* GoogleService-Info.plist */; };
 		3E14A5DA2BCEE6020087B9E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E14A5D82BCEE6020087B9E2 /* GoogleService-Info.plist */; };
 		3E14A5DC2BD0D2820087B9E2 /* MyRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14A5DB2BD0D2820087B9E2 /* MyRecipeView.swift */; };
@@ -62,7 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		005E2EA02BD60B1800A68B28 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarView.swift; path = "../../../../../../Library/Mobile Documents/.Trash/CalendarView.swift"; sourceTree = "<group>"; };
+		005E2EA22BD60C9D00A68B28 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		3E14A5D82BCEE6020087B9E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E14A5DB2BD0D2820087B9E2 /* MyRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeView.swift; sourceTree = "<group>"; };
 		3E14A5DE2BD0D6EB0087B9E2 /* NewRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewModel.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				3E14A5E42BD0DADF0087B9E2 /* NewRecipeView.swift */,
 				88618BDD292FEC0200B02C2C /* FavouritesListView.swift */,
 				88618BE22930B8D300B02C2C /* FavouritesListView2.swift */,
-				005E2EA02BD60B1800A68B28 /* CalendarView.swift */,
+				005E2EA22BD60C9D00A68B28 /* CalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 			files = (
 				3E14A5E22BD0D76D0087B9E2 /* NewRecipe.swift in Sources */,
 				88618BD5292FDC4B00B02C2C /* FavouriteViewModel.swift in Sources */,
-				005E2EA12BD60B1800A68B28 /* CalendarView.swift in Sources */,
+				005E2EA32BD60C9D00A68B28 /* CalendarView.swift in Sources */,
 				88C795522874845A00F9F37B /* LoginView.swift in Sources */,
 				88EE454B292FC0CC00B15638 /* Introduction.swift in Sources */,
 				88FC9F7C28734A8100A83D18 /* MyFavouritesView.swift in Sources */,
