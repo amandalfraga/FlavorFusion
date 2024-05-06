@@ -24,13 +24,17 @@ struct DayView: View {
         Date(),
         Calendar.current.date(byAdding: .hour, value: 1,
                               to: Date())!,
-        Calendar.current.date(byAdding: .hour, value: 2,
-                              to: Date())!,
         Calendar.current.date(byAdding: .hour, value: 3,
                               to: Date())!,
-        Calendar.current.date(byAdding: .hour, value: 4,
+        Calendar.current.date(byAdding: .hour, value: 5,
                               to: Date())!,
+        Calendar.current.date(byAdding: .hour, value: 7,
+                              to: Date())!,
+//        Calendar.current.date(bySettingHour: 7, minute: 0, second: 0, of: Date())
+        
     ]
+    @State var selectedDate: Date?
+    
     var body: some View {
         
         ScrollView {
@@ -45,11 +49,46 @@ struct DayView: View {
             Text("Meals")
             
             ForEach(dates, id: \.self) { date in
-                Button{
-                    
-                } label: {
-                    Text(date.timeFromDate())
+                HStack {
+                    Button{
+                        withAnimation{
+                            selectedDate = date
+                        }
+                    } label: {
+                        Text(date.timeFromDate())
+                            .bold()
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(selectedDate == date ? .white : .blue)
+                            .background(
+                                ZStack{
+                                    if selectedDate == date {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .foregroundColor(.gray)
+                                    } else {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke()
+                                    }
+                                }
+                            )
+                    }
+                    if selectedDate == date {
+                        NavigationLink{
+                            EmptyView()
+                        } label: {
+                            Text("Next")
+                                .bold()
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.white)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .foregroundColor(.blue)
+                                )
+                        }
+                    }
                 }
+                .padding(.horizontal)
             }
                 
         }

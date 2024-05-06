@@ -21,7 +21,7 @@ import Foundation
 
 extension Date {
     
-    func monthAndYear() -> String {
+    func monthYearFormat() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM YYYY"
         
